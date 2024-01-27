@@ -1,7 +1,5 @@
 <h1 align="center">
   <br>
-  <img src="link_para_uma_imagem.png" alt="Observability Project - O2B Academy">
-  <br>
   Projeto de Observabilidade - O2B Academy
   <br>
 </h1>
