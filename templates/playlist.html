@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>KyaBey World - {{ title }}</title>
+</head>
+<body>
+    <header>
+        <h1>KyaBey World - {{ title }}</h1>
+    </header>
+    
+    <nav class="playlist-menu">
+        <a href="/">Início</a>
+        <a href="/tecnologia">Tech Videos from YouTube</a>
+        <a href="/musica">Musics Videos from YouTube</a>
+    </nav>
+
+    {% for video in videos %}
+        <div class="video-info">
+            <div class="video-thumbnail">
+                <img src="{{ video['thumbnail_url'] }}" alt="Video Thumbnail">
+            </div>
+            <div class="video-details">
+                <p class="video-title">{{ video['title'] }}</p>
+                <p class="video-artist">{{ video['artist'] }}</p>
+                <a href="https://www.youtube.com/watch?v={{ video['video_id'] }}" class="video-link" target="_blank">Assistir no YouTube</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <script>
+        function showPlaylist(playlistId) {
+            document.querySelectorAll('.playlist-container').forEach(function (container) {
+                container.style.display = 'none';
+            });
+
+            document.getElementById('playlistContainer-' + playlistId).style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

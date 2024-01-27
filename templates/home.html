@@ -1,0 +1,118 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>KyaBey World</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f7eaf9; /* Lavender Blush */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #c355f5; /* Medium Orchid */
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .site-description {
+            font-size: 1.1em;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .quote {
+            background-color: #c355f5; /* Medium Orchid */
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .quote p {
+            font-style: italic;
+            margin: 0;
+        }
+
+        .invitation {
+            font-size: 1.1em;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        nav.playlist-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav.playlist-menu a {
+            margin: 0 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav.playlist-menu a:hover {
+            color: #c355f5; /* Medium Orchid */
+        }
+
+        footer {
+            background-color: #c355f5; /* Medium Orchid */
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 0.8em;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KyaBey's World</h1>
+        <p>Website developed for the Observability workshop laboratory, held by O2B Operation to Business Academyl.</p>
+    </header>
+    
+    <nav class="playlist-menu">
+        <a href="/tecnologia">Tech Videos from YouTube</a>
+        <a href="/musica">Musics Videos from YouTube</a>
+    </nav>
+
+    <img src="{{ url_for('static', filename='imagem.png') }}" alt="Imagem" style="width: 100%; max-width: 300px;">
+
+    <footer>
+        <p> &heartsuit; by KyaBey &hearts;</p>
+    </footer>
+</body>
+</html>

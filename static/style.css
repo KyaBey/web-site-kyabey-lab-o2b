@@ -1,0 +1,130 @@
+/* style.css */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7eaf9; /* Lavender Blush */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #c355f5; /* Medium Orchid */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+nav.playlist-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav.playlist-menu a {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold; /* Adiciona negrito para criar mais destaque */
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+
+nav.playlist-menu a:hover {
+    color: #c355f5; /* Altere para a cor desejada ao passar o mouse */
+    border-bottom: 2px solid #c355f5; /* Altere para a cor desejada da borda inferior ao passar o mouse */
+}
+
+
+
+
+nav.playlist-menu a:hover {
+    color: #c355f5; /* Medium Orchid */
+}
+
+.playlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.video-info {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(16.6667% - 20px);
+    margin-bottom: 20px;
+    display: inline-table;
+}
+
+.video-thumbnail {
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-details {
+    padding: 10px;
+    text-align: center;
+    height: 100px;
+}
+
+.video-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.video-artist {
+    font-size: 11px;
+    margin-bottom: 5px;
+    color: #777; /* Gray */
+}
+
+.video-link {
+    font-size: 12px;
+    color: #c355f5; /* Medium Orchid */
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+footer {
+    background-color: #c355f5; /* Medium Orchid */
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.playlist-container {
+    display: flex;
+}
