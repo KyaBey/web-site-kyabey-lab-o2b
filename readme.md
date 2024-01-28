@@ -75,7 +75,7 @@
 
 ### Alertas no Slack
 
-![Alertas no Slack](./imagens/alerta.slack.png)
+![Alertas no Slack](./imagens/alerta-slack.png)
 
 <h2 align="center">Por Que Lab-O2B-Observability? 🤔</h2>
 
