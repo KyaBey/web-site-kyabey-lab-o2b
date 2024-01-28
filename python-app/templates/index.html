@@ -48,14 +48,38 @@
         }
 
         /* ... (restante do estilo) ... */
+
+        .content {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>KyaBey World</h1>
-    <div class="playlist-menu">
+    
+    <nav class="playlist-menu">
+        <a href="/tecnologia">Tech Videos from YouTube</a>
+        <a href="/musica">Musics Videos from YouTube</a>
+        <a href="/generate-error" onclick="showContent('generate-error')">Gerar Erro</a>
+        <a href="/calculate-duration" onclick="showContent('calculate-duration')">Calcular Duração</a>
+        <a href="javascript:void(0);" onclick="window.location.href='/metrics'; showContent('metrics');">Métricas</a>
         {% for playlist in playlists %}
             <div class="playlist-menu-item" onclick="showPlaylist('{{ playlist['id'] }}')">{{ playlist['title'] }}</div>
         {% endfor %}
+    </nav>
+    <div class="content" id="generate-error">
+        <!-- Conteúdo de Gerar Erro -->
+        <p>Conteúdo de Gerar Erro aqui...</p>
+    </div>
+
+    <div class="content" id="calculate-duration">
+        <!-- Conteúdo de Calcular Duração -->
+        <p>Conteúdo de Calcular Duração aqui...</p>
+    </div>
+
+    <div class="content" id="metrics">
+        <!-- Conteúdo de Métricas -->
+        <p>Conteúdo de Métricas aqui...</p>
     </div>
 
     {% for playlist in playlists %}
@@ -82,6 +106,14 @@
             });
 
             document.getElementById('playlistContainer-' + playlistId).style.display = 'flex';
+        }
+
+        function showContent(contentId) {
+            document.querySelectorAll('.content').forEach(function (content) {
+                content.style.display = 'none';
+            });
+
+            document.getElementById(contentId).style.display = 'block';
         }
     </script>
 </body>
