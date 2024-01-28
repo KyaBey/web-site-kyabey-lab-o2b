@@ -1,6 +1,47 @@
 groups:
- - name: Error greater than 5
-   rules:
-   - alert: ErrorGreaterThan5
-     expr: app_errors_total > 5
-     for: 10s
+  - name: Application Alerts
+    rules:
+      - alert: HighErrorRate
+        expr: rate(app_errors_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "The error rate is too high. Investigate the application for potential issues."
+
+      - alert: HighRequestDuration
+        expr: histogram_quantile(0.95, sum(rate(app_request_duration_seconds_bucket[5m])) by (le)) > 0.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High request duration detected"
+          description: "The 95th percentile of request duration is higher than 0.5 seconds. Check for performance issues."
+
+      - alert: HighConcurrentRequests
+        expr: app_requests_total > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High concurrent requests"
+          description: "The number of concurrent requests is high. Monitor for potential capacity issues."
+
+      - alert: ServerRestarted
+        expr: changes(app_server_up[1h]) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Server restarted"
+          description: "The server has restarted. Investigate for potential issues."
+
+      - alert: GenerateErrorRate
+        expr: rate(app_errors_total{job="your_job_name"}[5m]) > 0.05
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Error generation rate is high"
+          description: "The rate of intentionally generated errors is high. Investigate for potential issues."

@@ -1,9 +1,13 @@
 global:
   resolve_timeout: 5m
+
 route:
-  receiver: webhook_receiver
+  receiver: 'slack-notification'
+
 receivers:
-    - name: webhook_receiver
-      webhook_configs:
-        - url: 'https://webhook.site/8dd69597-efa5-40d5-aac7-1eec74ff1e5e'
-          send_resolved: false
+    - name: 'slack-notification'
+      slack_configs:
+        - send_resolved: true
+          username: 'Alertmanager'
+          channel: '#lab-o2b-observability'
+          api_url: 'https://hooks.slack.com/services/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'
